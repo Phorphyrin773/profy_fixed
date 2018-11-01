@@ -39,6 +39,16 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
-  config.action_mailer.default_url_options = { protocol: 'https', host:'rails3のトップページアドレス' }
-
+  config.action_mailer.default_url_options = { host: 'https://11eed663fcf74971a60baf3752cb21f1.vfs.cloud9.ap-southeast-1.amazonaws.com' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => "techcamp.profy.test.nanami@gmail.com", #ご自身のgmailアドレス
+    :password => "juigznnwwqeujlwl", #2段階認証したアカウントで発行したアプリパスワード
+    :authentication => 'login'
+  }
 end

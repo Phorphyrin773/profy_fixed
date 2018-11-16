@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   has_one_attached :image
   
   # Include default devise modules. Others available are:
@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   #association
   belongs_to :group
   has_many :questions, ->{ order("created_at DESC") }
+  has_many :answers, ->{ order("updated_at DESC") }
   
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup

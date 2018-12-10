@@ -55,4 +55,4 @@ gem 'bootstrap-material-design', '0.1.4'
 
 # Use ActiveStorage variant
 gem 'mini_magick'
-
+gem 'kaminari'
